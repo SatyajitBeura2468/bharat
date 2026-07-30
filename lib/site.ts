@@ -3,7 +3,7 @@ export const siteConfig = {
   devanagariName: "भारत",
   title: "BHARAT — A living atlas of a civilization",
   description: "Explore the land, people, history, ideas and future of India.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://bharat-living-atlas.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://atlas-bharat.vercel.app",
   repository: "https://github.com/SatyajitBeura2468/bharat",
   locale: "en_IN",
 } as const;
