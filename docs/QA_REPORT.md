@@ -15,7 +15,7 @@ Release candidate reviewed 30 July 2026.
 - [x] Visual regression baselines at 1440×1000 and 390×844
 - [x] Rendered inspection at desktop and mobile widths
 - [x] Reduced-motion, keyboard, search, theme, map and state navigation checks
-- [ ] Production URL and metadata smoke test — completed after deployment
+- [x] Public production URL, route, metadata, sitemap, robots and social-image smoke tests
 
 ## Fidelity ledger
 
@@ -23,7 +23,7 @@ Release candidate reviewed 30 July 2026.
 |---|---|---|---|---|
 | Brand name dominated the first hero render | Plate 01 elevates the primary brand line | `outputs/bharat-hero-desktop.png` | Promoted “A living atlas of a civilization.” to the hero heading; retained BHARAT/भारत as identity | None |
 | Mobile utility controls overcrowded the masthead | Plate 11 shows identity plus one menu control | Initial 390px browser render | Moved search, language and theme into the mobile drawer | None |
-| Mobile terrain sat behind the headline | Plate 11 keeps the geographic silhouette above the copy | `outputs/bharat-home-mobile-final.png` | Added a narrow-camera scale, rotation and vertical composition | None |
+| Mobile terrain sat behind the headline | Plate 11 keeps the geographic silhouette above the copy | `outputs/bharat-home-mobile-final.png` | Replaced the mobile WebGL scene with a lighter exact-boundary SVG composition; desktop retains the terrain scene | Deliberate mobile performance adaptation |
 | MapLibre geometry was not captured by the browser compositor | Plate 02 requires visible boundaries and a selected state | Initial atlas render showed an empty map surface | Added a synchronized SVG boundary layer with keyboard-selectable reviewed states | MapLibre remains the camera/input engine; SVG guarantees visual and accessibility parity |
 | State chapter navigation repeated “Places” | Plate 10 has one clear editorial index | Odisha render | Renamed the detailed destination to “Place index” | None |
 | Concept photography was not licensable for production | Plates 04, 05, 08 and 10 use atmospheric image references | Final production uses texture, contour, colour and geometry | Replaced photographic dependencies with procedural visual systems | Deliberate rights-safe production choice |
