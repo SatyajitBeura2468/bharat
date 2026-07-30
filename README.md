@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://bharat-atlas.vercel.app"><img alt="Open the live atlas" src="https://img.shields.io/badge/OPEN_THE_LIVE_ATLAS-C39B55?style=for-the-badge&labelColor=07111D" /></a>
+  <a href="https://bharat-living-atlas.vercel.app"><img alt="Open the live atlas" src="https://img.shields.io/badge/OPEN_THE_LIVE_ATLAS-C39B55?style=for-the-badge&labelColor=07111D" /></a>
   <a href="docs/concepts/CONCEPT_SYSTEM.md"><img alt="View the concept system" src="https://img.shields.io/badge/VIEW_THE_CONCEPT_SYSTEM-172D57?style=for-the-badge&labelColor=07111D" /></a>
 </p>
 
@@ -47,7 +47,7 @@ It is designed around one idea: **ancient depth, modern precision**. The interfa
 | Explore | Understand | Follow a story |
 |---|---|---|
 | Move from the national atlas to a selected state. | See the source, date and interpretive limits behind a chart or historical event. | Read one question across prose, maps, timelines and evidence. |
-| [/explore](https://bharat-atlas.vercel.app/explore) | [/methodology](https://bharat-atlas.vercel.app/methodology) | [/stories](https://bharat-atlas.vercel.app/stories) |
+| [/explore](https://bharat-living-atlas.vercel.app/explore) | [/methodology](https://bharat-living-atlas.vercel.app/methodology) | [/stories](https://bharat-living-atlas.vercel.app/stories) |
 
 ## Information architecture
 
@@ -121,7 +121,7 @@ Content records reference stable IDs in a central source registry rather than co
 
 The Phase 1 registry prioritises Census of India, state institutions, ISRO, UNESCO, NCERT, IMD and the Central Water Commission. Administrative geometry is supplied through geoBoundaries and retains its source/licence note in both the registry and map attribution.
 
-See the [source and attribution policy](docs/content/SOURCE_AND_ATTRIBUTION_POLICY.md), [methodology](https://bharat-atlas.vercel.app/methodology) and [content contribution guide](docs/CONTENT_CONTRIBUTION.md).
+See the [source and attribution policy](docs/content/SOURCE_AND_ATTRIBUTION_POLICY.md), [methodology](https://bharat-living-atlas.vercel.app/methodology) and [content contribution guide](docs/CONTENT_CONTRIBUTION.md).
 
 ## Accessibility and performance
 
