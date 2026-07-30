@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/concepts/plates/01-navigation-hero.png" alt="BHARAT navigation and cinematic topographic hero concept" width="100%" />
+  <img src="docs/concepts/plates/01-navigation-hero.png" alt="BHARAT — a cinematic topographic atlas of India" width="100%" />
 </p>
 
 <h1 align="center">BHARAT · भारत</h1>
@@ -10,47 +10,52 @@
 </p>
 
 <p align="center">
-  <a href="docs/concepts/CONCEPT_SYSTEM.md"><strong>Explore the visual concept system →</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="docs/product/INFORMATION_ARCHITECTURE.md">Information architecture</a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="docs/architecture/IMPLEMENTATION_PLAN.md">Implementation plan</a>
+  <a href="https://bharat-atlas.vercel.app"><img alt="Open the live atlas" src="https://img.shields.io/badge/OPEN_THE_LIVE_ATLAS-C39B55?style=for-the-badge&labelColor=07111D" /></a>
+  <a href="docs/concepts/CONCEPT_SYSTEM.md"><img alt="View the concept system" src="https://img.shields.io/badge/VIEW_THE_CONCEPT_SYSTEM-172D57?style=for-the-badge&labelColor=07111D" /></a>
 </p>
 
+<p align="center">
+  <img alt="Next.js 16" src="https://img.shields.io/badge/Next.js_16-07111D?style=flat-square&logo=nextdotjs" />
+  <img alt="TypeScript strict" src="https://img.shields.io/badge/TypeScript-strict-172D57?style=flat-square&logo=typescript&logoColor=white" />
+  <img alt="WCAG AA target" src="https://img.shields.io/badge/Accessibility-WCAG_AA-365F47?style=flat-square" />
+  <img alt="Source validated" src="https://img.shields.io/badge/Content-source_validated-A84F36?style=flat-square" />
+</p>
+
+---
+
+BHARAT is an independent, evidence-led digital atlas and knowledge platform about India. It combines the depth of an encyclopedia, the freedom of an atlas, the storytelling rhythm of a digital museum and the legibility of a modern data platform.
+
+It is designed around one idea: **ancient depth, modern precision**. The interface is monumental without being loud, distinctly Indian without becoming ornamental shorthand, and cinematic without delaying navigation or reading.
+
 > [!IMPORTANT]
-> BHARAT is currently at the concept-approval gate. A public app deployment is intentionally withheld until the approved system is implemented and passes accessibility, source, performance, browser, and visual-fidelity checks. The verified live-app button will replace this note at release.
+> BHARAT is an independent educational project. It is not affiliated with the Government of India and does not present itself as an official service.
 
-## What BHARAT is
+## The experience
 
-BHARAT is an independent, evidence-led digital atlas and knowledge platform about India. It brings together the depth of an encyclopedia, the exploration model of an atlas, the storytelling rhythm of a digital museum, and the clarity of a modern data platform.
+- A full-viewport, procedural topographic hero built from real administrative geometry
+- An interactive MapLibre atlas with state selection, layers, search, keyboard/touch alternatives and linked state profiles
+- An uncertainty-aware historical chronology from early settlements to contemporary India
+- Editorial collections for culture, physical geography and innovation
+- Accessible data comparisons with units, reference years, review dates, methodology notes and table equivalents
+- Six structured long-form stories using reusable prose, map, timeline, quote and data blocks
+- Typo-tolerant global search with previews, keyboard shortcut and recent-search persistence
+- Complete demonstration atlases for **Odisha**, **Rajasthan** and **Kerala**
+- Dark and light themes, responsive composition and a full reduced-motion mode
 
-The design philosophy is **ancient depth, modern precision**: monumental without spectacle, distinctly Indian without ornamental shorthand, and cinematic without getting in the way of reading or navigation.
+## A small tour
 
-## The concept system
+| Explore | Understand | Follow a story |
+|---|---|---|
+| Move from the national atlas to a selected state. | See the source, date and interpretive limits behind a chart or historical event. | Read one question across prose, maps, timelines and evidence. |
+| [/explore](https://bharat-atlas.vercel.app/explore) | [/methodology](https://bharat-atlas.vercel.app/methodology) | [/stories](https://bharat-atlas.vercel.app/stories) |
 
-The initial design package contains eleven coordinated, high-resolution production references:
-
-1. Navigation and cinematic hero
-2. Interactive India explorer
-3. Historical timeline
-4. Culture editorial tapestry
-5. Geography and nature journey
-6. Science, innovation and space
-7. Accessible data visualisation
-8. Stories and command-palette search
-9. Footer, sources and methodology
-10. Odisha state-detail template
-11. Mobile homepage
-
-Open the [complete concept system](docs/concepts/CONCEPT_SYSTEM.md) to review every plate, its intended interaction model, and the approval checklist.
-
-## Planned routes
+## Information architecture
 
 ```text
 /
 ├── explore
 ├── states
-│   └── [slug]
+│   └── [slug]         Odisha · Rajasthan · Kerala
 ├── places/[slug]
 ├── history
 │   └── timeline
@@ -67,49 +72,81 @@ Open the [complete concept system](docs/concepts/CONCEPT_SYSTEM.md) to review ev
 └── about
 ```
 
-## Product guardrails
+Every path is server-rendered where possible. WebGL, MapLibre and heavier interactive modules stay outside routes that do not need them.
 
-- Independent educational project; not an official Government of India service.
-- No State Emblem, government-service implication, or patriotic symbolism as filler.
-- No factual claim or data point without traceable source metadata.
-- No generated or meaningless Indian scripts.
-- No hover-only exploration, animation-blocked navigation, or 3D-only access.
-- No fabricated maps, statistics, historical certainty, or programme claims.
-- Every heavy visual surface receives an accessible and reduced-motion alternative.
+## Engineering
 
-## Planned engineering foundation
+BHARAT uses Next.js App Router, React Server Components, strict TypeScript and Tailwind CSS with a focused cinematic CSS layer. React Three Fiber and Drei own the hero scene; MapLibre owns geographic interaction; Zod owns content validation; Fuse powers the replaceable local search index.
 
-- Next.js App Router and strict TypeScript
-- React Server Components by default
-- Tailwind CSS plus focused cinematic CSS
-- Motion for interface transitions
-- GSAP only for the single complex scroll choreography
-- React Three Fiber and Drei for the optional hero terrain
-- MapLibre GL JS for geospatial exploration
-- D3 modules for bespoke visualisations
-- Zod-validated structured content and typed MDX
-- Vitest, React Testing Library and Playwright
-- Vercel deployment after release gates pass
+```text
+app/          routes, metadata, sitemap and social image
+components/   shell, hero, map, data and search systems
+content/      states, places, history, stories, datasets and sources
+lib/          schemas, validated indexes and site configuration
+public/data/  licensed administrative geometry
+scripts/      content, source and route validators
+tests/        Vitest and Testing Library coverage
+e2e/          Playwright desktop and mobile journeys
+docs/         concept, architecture, accessibility and QA records
+```
 
-Dependency versions will be selected and pinned against current stable releases when implementation begins.
+### Run locally
 
-## Documentation
+```bash
+corepack enable
+pnpm install
+pnpm dev
+```
 
-- [Concept system](docs/concepts/CONCEPT_SYSTEM.md)
-- [Concept-generation manifest](docs/concepts/PROMPTS.md)
-- [Information architecture](docs/product/INFORMATION_ARCHITECTURE.md)
-- [Design system](docs/design/DESIGN_SYSTEM.md)
+Open `http://localhost:3000`.
+
+### Release gates
+
+```bash
+pnpm qa
+pnpm test:e2e
+```
+
+`pnpm qa` runs lint, strict type-checking, unit/component tests, content-schema validation, source-reference validation, internal route checks and the production build.
+
+## Truth and attribution
+
+Content records reference stable IDs in a central source registry rather than copying raw URLs. Meaningful facts can carry:
+
+- one or more sources
+- a reference year
+- a review date
+- a confidence classification
+- an optional methodological note
+
+The Phase 1 registry prioritises Census of India, state institutions, ISRO, UNESCO, NCERT, IMD and the Central Water Commission. Administrative geometry is supplied through geoBoundaries and retains its source/licence note in both the registry and map attribution.
+
+See the [source and attribution policy](docs/content/SOURCE_AND_ATTRIBUTION_POLICY.md), [methodology](https://bharat-atlas.vercel.app/methodology) and [content contribution guide](docs/CONTENT_CONTRIBUTION.md).
+
+## Accessibility and performance
+
+The site targets WCAG AA. Maps and charts have textual alternatives; navigation, search and menus work by keyboard; status never relies only on colour; focus is visible; and mobile is separately composed.
+
+When reduced motion is requested, the entry sequence, parallax, ambient particles and WebGL scene are removed while all content and navigation remain. The map and terrain systems are dynamically imported, distant homepage sections use `content-visibility`, and visual effects are constrained to composited motion.
+
+- [Accessibility notes](docs/ACCESSIBILITY.md)
+- [Performance architecture and budgets](docs/PERFORMANCE.md)
 - [Motion architecture](docs/design/MOTION_ARCHITECTURE.md)
-- [Implementation and QA plan](docs/architecture/IMPLEMENTATION_PLAN.md)
-- [Source and attribution policy](docs/content/SOURCE_AND_ATTRIBUTION_POLICY.md)
+- [Release QA and fidelity ledger](docs/QA_REPORT.md)
 
-## Current status
+## Design archive
 
-**Stage 2 — visual concept approval.** Production UI has not started, by design. Once the concept system is accepted, the implementation will proceed section by section with screenshot comparison and a written fidelity ledger.
+The production experience grew from eleven approved high-resolution plates covering the hero, atlas, timeline, cultural tapestry, nature, innovation, data, stories, sources, state template and mobile system.
+
+[Open the complete visual concept system →](docs/concepts/CONCEPT_SYSTEM.md)
+
+## Contributing
+
+Please start with [CONTENT_CONTRIBUTION.md](docs/CONTENT_CONTRIBUTION.md). New records are expected to be sourced, reviewed, schema-valid and considerate of script accuracy, licensing and uncertainty.
 
 ---
 
 <p align="center">
-  <strong>BHARAT</strong><br />
-  Evidence-led, openly attributed, built with care.
+  <strong>BHARAT · भारत</strong><br />
+  <sub>Evidence-led. Openly attributed. Built with care.</sub>
 </p>
